@@ -1,0 +1,15 @@
+This is a small social network. People can be added to the network,
+and can add friendships between them. the whole network can also be printed
+to show who is connected. THe graph is the write structure for a social network because 
+the data is really about the connections between people. Each person is a node and the connection is an edge.
+Anyone can be conneted to another person if they want too. 
+A list doesnt work as well because its not able to show who is connected to someone else. 
+A tree wouldnt work either because trees have to start with one person as the first parent. 
+I noticed a few trade-offs. The dictionary makes looking up a person fast,
+but add_connection checks a list with "not in," which gets slower as someone
+has more friends. Each friendship is stored twice, once per person, which
+uses more memory but makes it easy to see a person's friends quickly. The
+catch is that both sides must be updated together, or they could fall out of
+sync. Printing visits every person and every connection, so it takes longer
+as the network grows. Using a set instead of a list for connections would
+speed up duplicate checks.
